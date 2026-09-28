@@ -1,0 +1,9 @@
+round: r1_craft
+slice: B3-edge
+sha256: af50f4217e4e26ea982dafa108d1cc9b16617040662419343e3af0fca087fb7b
+code: AF50-F421
+locked_at: 2026-09-28T21:01:48+07:00
+shapes: box=16, polygon=9
+prefill_kept: 2
+prefill_edited: 0
+new: 14

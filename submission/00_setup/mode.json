@@ -11,5 +11,12 @@
   },
   "self": "hoang",
   "slice": "B3-edge",
-  "degrade": []
+  "degrade": [],
+  "current_slice": "B3-edge",
+  "support_prefill": false,
+  "support_slice": "",
+  "prefill_box_ids": [
+    "adasind_123090.jpg:1",
+    "adasind_123090.jpg:2"
+  ]
 }

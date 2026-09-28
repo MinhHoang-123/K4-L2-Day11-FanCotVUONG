@@ -1,1 +1,6 @@
 round,slice,frame,object_ref,cell,what,why,severity,owner,rule_id,evidence,action,rules_version,note
+calib,C0,adasind_019560.jpg,L2+R1,center,WRONG_CLASS,Người dắt xe phải là Pedestrian nhưng bản chuẩn (Reference) lại gán sai là Bike,major,tuananh,R03,Ông áo vàng dắt xe,Giữ nguyên L2 (Ref sai),v1.0.0,
+calib,C0,adasind_019560.jpg,R5,center,MISSING,Bỏ sót một chiếc xe lam (ThreeWheeler) ở phía sau nền (cao >40px),major,tuananh,R01,Phía sau chiếc xe máy,Cần vẽ thêm,v1.0.0,
+calib,C0,adasind_019560.jpg,R6,mid,MISSING,Bỏ sót một chiếc xe lam (ThreeWheeler) xa hơn (cao >40px),major,tuananh,R01,Phía sau,Cần vẽ thêm,v1.0.0,
+calib,C0,adasind_019560.jpg,L5,na,SPURIOUS,,,,,,,,
+calib,C0,adasind_019560.jpg,L7,na,SPURIOUS,,,,,,,,
