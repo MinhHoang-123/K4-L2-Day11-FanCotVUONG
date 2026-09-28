@@ -10,7 +10,7 @@
 - Tên định danh vai A dùng cho --self: hau
 - Kênh trao đổi nội bộ: Zalo
 - Đại diện nộp (vai C): Trần Tuấn Anh, 2A202602110
-- Commit chốt bài: [C sẽ điền sau khi commit]
+- Commit chốt bài: Chưa chốt; cần điền SHA sau khi hoàn tất các thay đổi cuối và commit
 
 ## 2. Ba vai chính
 
@@ -30,13 +30,13 @@ Bảng này xác định vai của nhóm. Vòng QA tự sinh trong team.json thu
 | P2 · Khóa bản đầu | A → B, C | XML, lock.txt, slice B3-edge, code 8D79-5004 | B xác nhận đúng mã 8D79-5004 | Hoàn thành |
 | P3 · Chốt QA mù | B → C, A | qa_review.md, findings r2_qa | C đã xem 3 finding r2_qa | Hoàn thành |
 | P4 · Quyết định sửa | C → A, B | findings.csv, decision log | A đồng ý sửa theo decision | Hoàn thành |
-| P5 · Kiểm bản sửa | A → B → C | annotations-v2.xml, lock2.txt, delta.md | B xác nhận delta hợp lý | Hoàn thành |
-| P6 · Chốt nộp | A, B → C | manifest.json | C check ra exit code 0 | Hoàn thành |
+| P5 · Kiểm bản sửa | A → B → C | annotations-v2.xml, lock2.txt, delta.md | Chưa có biên bản riêng xác nhận B đã kiểm lại các ca sau rework; delta ghi export rework trùng hash bản craft | Chưa xác nhận hoàn tất |
+| P6 · Chốt nộp | A, B → C | manifest.json | `check` ra exit code 0; còn thiếu commit chốt và xác nhận push | Chưa hoàn tất |
 
 ## 4. Bất đồng và phối hợp
 
 - Một ca đã phân xử: adasind_199770.jpg; L5 Pedestrian gần ThreeWheeler; R03; A muốn giữ, B báo spurious; Quyết định giữ L5 và C ghi vào findings.
-- Ca còn mở: Không còn.
+- Ca còn mở: P5/rework — `annotations-v2.xml` có cùng SHA-256 với bản `r1_craft`; cần quyết định giữ nguyên có căn cứ hoặc export lại bản đã sửa, sau đó B kiểm lại và ghi bằng chứng.
 - Đóng góp của A/B/C vào kế hoạch và exit ticket: A và B cung cấp bằng chứng cho error card, C tổng hợp và viết kế hoạch gold set.
 - Thay đổi phân công nếu có: Không đổi.
 
