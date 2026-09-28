@@ -1,1 +1,5 @@
 id,date,question,decision,rationale,status
+D01,2026-09-28,ThreeWheeler chồng box ở adasind_199770: tách từng xe hay gộp crowd?,Tách từng xe riêng với occluded=true,Rule R01 yêu cầu box cho mọi vật ≥40 px; các xe vẫn phân biệt được bằng mắt dù chồng nhau,resolved
+D02,2026-09-28,Pedestrian xtl=8 tại adasind_128310: truncated hay không?,Giữ truncated=false,Vật không bị cắt bởi biên khung hình hay vòng kính; xtl=8 chỉ là vị trí gần mép nhưng toàn bộ vật vẫn nằm trong frame,resolved
+D03,2026-09-28,ThreeWheeler box 162x548 px ở rìa phải adasind_199770 có nằm trong ignore?,Giữ box nhưng đánh truncated=true,Box bị cắt bởi biên phải (xbr=1080) nên truncated=true đúng; phần trong vòng kính vẫn cần gán nhãn,resolved
+D04,2026-09-28,Cần guideline mới cho ca đông đúc (≥3 phương tiện cùng class chen nhau)?,Đề xuất R12 lên guideline team,Không có rule hiện tại hướng dẫn xử lý; annotator và reference bất đồng nhiều ở vùng đông,escalated

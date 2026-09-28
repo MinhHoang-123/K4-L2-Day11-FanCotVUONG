@@ -1,0 +1,9 @@
+round: rework
+slice: B3-edge
+sha256: 8d7950043fb179d615ef5a6e68bcce2dae8790d2cf6584941247aa3f23a32c8e
+code: 8D79-5004
+locked_at: 2026-09-28T21:41:32+07:00
+shapes: box=16, polygon=9
+prefill_kept: 2
+prefill_edited: 0
+new: 14

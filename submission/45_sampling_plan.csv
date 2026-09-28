@@ -1,9 +1,9 @@
 camera_id,slice_type,frames,risk,rationale
-front,normal,,TODO,TODO
-front,hard,,TODO,TODO
-rear,normal,,TODO,TODO
-rear,hard,,TODO,TODO
-left,normal,,TODO,TODO
-left,hard,,TODO,TODO
-right,normal,,TODO,TODO
-right,hard,,TODO,TODO
+front,normal,30,medium,Camera trước thấy làn đường chính và xe đối diện; normal là cảnh ban ngày ít xe trên đường thẳng
+front,hard,20,high,Giao lộ đông đúc hoặc vùng đỗ xe phía trước; vật ở edge bị méo mạnh do fisheye và nhiều occlusion
+rear,normal,30,medium,Camera sau thấy xe theo sau và vỉa hè; normal là đường thẳng ít phương tiện
+rear,hard,20,high,Lùi xe vào bãi đỗ hoặc ùn tắc phía sau; nhiều vật nhỏ gần vòng kính có thể bị truncated
+left,normal,25,medium,Camera trái thấy vỉa hè và người đi bộ; normal là đường hai chiều thông thoáng
+left,hard,25,high,Vùng seam trước-trái có vật xuất hiện trên 2 camera; người đi bộ gần xe dễ bị occluded bởi gương chiếu hậu
+right,normal,25,medium,Camera phải thấy phần đường bên phải; normal là khu vực ít pedestrian và bike
+right,hard,25,high,Vùng seam sau-phải và khu chợ đông xe ba bánh ThreeWheeler chen nhau giống adasind_199770

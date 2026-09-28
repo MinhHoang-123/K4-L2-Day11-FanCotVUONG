@@ -1,9 +1,19 @@
 round: r1_craft
 slice: B3-edge
-sha256: af50f4217e4e26ea982dafa108d1cc9b16617040662419343e3af0fca087fb7b
-code: AF50-F421
-locked_at: 2026-09-28T21:01:48+07:00
+sha256: 8d7950043fb179d615ef5a6e68bcce2dae8790d2cf6584941247aa3f23a32c8e
+code: 8D79-5004
+locked_at: 2026-09-28T21:38:50+07:00
 shapes: box=16, polygon=9
 prefill_kept: 2
 prefill_edited: 0
 new: 14
+history:
+  round: r1_craft
+  slice: B3-edge
+  sha256: af50f4217e4e26ea982dafa108d1cc9b16617040662419343e3af0fca087fb7b
+  code: AF50-F421
+  locked_at: 2026-09-28T21:01:48+07:00
+  shapes: box=16, polygon=9
+  prefill_kept: 2
+  prefill_edited: 0
+  new: 14

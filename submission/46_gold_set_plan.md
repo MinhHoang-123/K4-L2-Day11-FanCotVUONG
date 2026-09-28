@@ -2,17 +2,17 @@
 
 **Đầu bài:** 50.000 frame từ bốn camera SVM, ngân sách chọn 200 frame để review/gold. Đây là tình huống trên slide,
 **không phải** 50.000 frame có trong repo. Phân bổ đúng 200 ở `45_sampling_plan.csv` cho bốn camera, mỗi camera có
-normal và hard slice. “Gold set” ở đây là **kế hoạch tạo** reference sau kiểm chứng, không phải teaching reference
+normal và hard slice. "Gold set" ở đây là **kế hoạch tạo** reference sau kiểm chứng, không phải teaching reference
 ADASIND hoặc nhãn bạn vừa vẽ. Nếu cần, dùng `notebooks/day11-svm360-colab.ipynb` để thử tổng phân bổ; notebook
 không làm thay phần lý do.
 
 | camera_id | Hard case cần chọn | Vì sao dễ sai | Annotation space / calibration cần giữ | Cách review trước khi gọi là gold |
 |---|---|---|---|---|
-| front | TODO | TODO | TODO | TODO |
-| rear | TODO | TODO | TODO | TODO |
-| left | TODO | TODO | TODO | TODO |
-| right | TODO | TODO | TODO | TODO |
+| front | Giao lộ đông đúc, xe đối diện lớn ở center, người qua đường | Vật ở center lớn nhưng xe đối diện có thể bị nhầm class (Car vs Van); pedestrian qua đường bị occluded bởi xe | Calibration fisheye front cần giữ để undistort kiểm box geometry; annotation space gồm 6 class + ignore ego_body | 2 annotator độc lập gán nhãn → adjudicator so sánh → chỉ frame đạt IoU ≥ 0.7 và đồng thuận class mới vào gold |
+| rear | Lùi xe vào ô đỗ, xe theo sau ở nhiều khoảng cách, vật nhỏ gần bumper | Vật gần camera bị méo mạnh ở edge; xe nhỏ xa ở center gần ngưỡng 40 px; ego_body bumper sau cần ignore chính xác | Calibration rear riêng biệt; ego_body polygon cho bumper sau khác front; vùng free-space phía sau xe | 2 annotator + cross-check với front camera cho vật ở seam trước-sau; frame có vật < 50 px cần đo lại trên ảnh gốc |
+| left | Khu chợ đông xe ba bánh, người dắt xe trên vỉa hè, vùng seam trước-trái | ThreeWheeler chen nhau giống adasind_199770; rider vs pedestrian dắt xe (R03) dễ nhầm; vùng seam có vật trùng với front camera | Calibration left; ego_body gồm gương chiếu hậu trái và phần thân xe bên trái; seam overlap với front cần policy | 2 annotator + so frame cùng timestamp từ front camera cho vật ở seam; flag ca rider/dắt xe để adjudicator kiểm R03 |
+| right | Xe đỗ bên đường, vùng seam sau-phải, vật bị che bởi hàng rào/cây | Vật bị occluded nhiều tầng khó xác định class; edge zone bên phải méo mạnh; seam overlap với rear camera | Calibration right; ego_body bên phải xe; seam overlap với rear cần cross-check | 2 annotator + kiểm occluded multi-layer; chỉ vật thấy ≥ 30% diện tích mới box; frame ở seam so với rear camera |
 
-- Khi nào cần refresh gold set (đổi camera, calibration hoặc rule): TODO
-- Một ca seam/cross-camera cần policy và evidence trước khi ghép hai box: TODO
-- Vì sao peer agreement hoặc quality report trên ảnh một camera chưa chứng minh gold set đúng cho cả bốn camera: TODO
+- Khi nào cần refresh gold set (đổi camera, calibration hoặc rule): Refresh khi thay đổi calibration (lắp lại camera, thay ống kính), khi cập nhật rule (ví dụ thêm R12 cho crowd), khi chuyển sang loại xe/quốc gia mới (distribution shift), hoặc khi quality report cho thấy agreement giữa gold và annotator giảm dưới 80%.
+- Một ca seam/cross-camera cần policy và evidence trước khi ghép hai box: Khi một xe ThreeWheeler xuất hiện ở vùng seam trước-trái, cả front camera và left camera đều có box cho nó. Trước khi quyết định giữ 1 box hay cả 2, cần: (1) timestamp khớp chứng minh cùng thời điểm, (2) calibration hai camera để project box về tọa độ 3D xác nhận cùng vật, (3) policy output đích — nếu downstream dùng BEV thì chỉ giữ 1 box merged, nếu dùng per-camera detection thì giữ cả 2.
+- Vì sao peer agreement hoặc quality report trên ảnh một camera chưa chứng minh gold set đúng cho cả bốn camera: Agreement cao trên 1 camera chỉ chứng minh annotator nhất quán trên camera đó (cùng góc nhìn, cùng mức méo, cùng loại ego_body). Camera khác có calibration khác, ego_body khác (bumper sau vs gương trái), vùng méo khác, và phân bố vật thể khác. Gold set cần kiểm riêng từng camera vì bias của annotator có thể khác nhau theo hướng nhìn. Ngoài ra, vật ở seam cần cross-camera verification mà quality report đơn camera không phát hiện được.
