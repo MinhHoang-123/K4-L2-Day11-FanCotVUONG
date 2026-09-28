@@ -1,0 +1,15 @@
+{
+  "members": [
+    "hau",
+    "hoang",
+    "tuananh"
+  ],
+  "assignments": {
+    "hau": "B2-center",
+    "hoang": "B3-edge",
+    "tuananh": "B4-center"
+  },
+  "self": "hoang",
+  "slice": "B3-edge",
+  "degrade": []
+}
