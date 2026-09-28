@@ -127,7 +127,7 @@
     {
       "file": "r3_diag/zone_table.md",
       "lines": 14,
-      "sha256": "93be390454a58c511cc8c9983f48d2576b9da1b4ed87510226ea6fc900361b3b"
+      "sha256": "639546482192a5782ba50814fdba6fb29edf5e49b62837a264fc6afbb39cdac9"
     },
     {
       "file": "rework/annotations-v2.xml",
@@ -142,13 +142,13 @@
     },
     {
       "file": "rework/delta.md",
-      "lines": 13,
-      "sha256": "55c539a71fe6de515af8d391907c2668b6972eb7fc2bda40ca3f670156b688a1"
+      "lines": 15,
+      "sha256": "05a16e3e12049b5a394e6f5939651f0d0cf39dfddf0c24aa61a030fa859717a7"
     },
     {
       "file": "findings.csv",
       "lines": 41,
-      "sha256": "022eb177bb789040ed99068b55a95bd683f1d94e12ea0e868c7fd1dc6e17580e"
+      "sha256": "9b64b5f72ab8f7518daa8f8a9720fb08fb69a8a176a44ac02cf71531bb1cb2d6"
     },
     {
       "file": "10_error_card.md",
@@ -158,7 +158,7 @@
     {
       "file": "20_guideline_patch.md",
       "lines": 7,
-      "sha256": "03491a6417efd128edc4f3cb83edf80219671c8987358987dc536583932ac29c"
+      "sha256": "13159225e1d9253d597c94ec2a27972b0a60de6765a2c789c1348dd484e5820f"
     },
     {
       "file": "30_escalation_ticket.md",
@@ -188,7 +188,7 @@
     {
       "file": "50_exit_ticket.md",
       "lines": 11,
-      "sha256": "6c11b1c5a2a860d2a5fe8e253797f9aa0562185bff4177ed09c906bdbe58beed"
+      "sha256": "d0b85bba54299b1bcb872c8324c222fdea54b11c040d121a96287b4021df5f5e"
     }
   ],
   "failed_gates": []
